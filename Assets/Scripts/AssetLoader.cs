@@ -34,7 +34,7 @@ public class AssetLoader : MonoBehaviour
             Debug.Log("Successfully loaded object ");
             goObject = Instantiate(loadedObject);
             goObject.name = "NewObj";
-            goObject.transform.position = Vector3.zero;
+            goObject.transform.position = Vector3.forward * -6.4f;
         }
         }
 }
