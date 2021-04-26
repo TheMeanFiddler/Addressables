@@ -31,10 +31,12 @@ public class AssetLoader : MonoBehaviour
         if (obj.Status == AsyncOperationStatus.Succeeded)
         {
             GameObject loadedObject = obj.Result;
-            Debug.Log("Successfully loaded object ");
+            txtTrace.text += ("\nOperation success");
             goObject = Instantiate(loadedObject);
             goObject.name = "NewObj";
             goObject.transform.position = Vector3.forward * -6.4f;
         }
-        }
+        if (obj.Status == AsyncOperationStatus.Failed)
+            txtTrace.text += ("\nOperation failed");
+    }
 }
